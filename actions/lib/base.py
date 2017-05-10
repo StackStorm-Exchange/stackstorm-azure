@@ -30,17 +30,15 @@ class AzureBaseAzureRM(Action):
 
     @staticmethod
     def _get_default_resource_group_from_cfg(config):
-        if config.get('default_resource_group'):
-            return config.get('default_resource_group')
+        return config.get('default_resource_group')
 
     def _get_resource_group(self, resource_group):
         if resource_group:
             return resource_group
+        elif self.default_resource_group:
+            return str(self.default_resource_group)
         else:
-            if self.default_resource_group:
-                return str(self.default_resource_group)
-            else:
-                raise Exception("Missing resource group")
+            raise Exception("Missing resource group")
 
     def _get_scaleset(self, resource_group=None, scale_group=None):
         output = azurerm.get_vmss(self.access_token,
