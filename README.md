@@ -40,3 +40,4 @@ For usage of the Resource Manager actions you will need to create a [Service Pri
 * ``create_resource`` - Create a generic ARM resource
 * ``create_linked_resource_url`` - Create a linked (template and parameter) resource from a URI
 * ``list_resource_groups`` - List the names of the resource groups
+* ``default_resource_group`` - Default resource group
