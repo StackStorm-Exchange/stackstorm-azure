@@ -1,6 +1,4 @@
 from lib.base import AzureBaseAzureRM
-import azurerm
-
 
 class Main(AzureBaseAzureRM):
     def run(self, resource_group, scale_group, count):

@@ -1,9 +1,9 @@
 ---
-name: "azure_get_scale_size"
+name: "get_scale_size"
 runner_type: "python-script"
 description: "Print message to standard output."
 enabled: true
-entry_point: "azure_get_scale_size.py"
+entry_point: "get_scaleset_size.py"
 parameters:
     resource_group:
         type: "string"

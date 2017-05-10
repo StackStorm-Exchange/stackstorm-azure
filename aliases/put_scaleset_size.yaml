@@ -2,7 +2,7 @@
 name: "put_scale_size"
 pack: "azure"
 description: "Put scaleset size"
-action_ref: "azure.azure_put_scale_size"
+action_ref: "azure.put_scaleset_size"
 formats:
   - display: "azure scaleset put {{resource_group}} name {{scale_group}} count {{count}}"
     representation:

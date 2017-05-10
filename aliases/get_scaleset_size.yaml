@@ -2,7 +2,7 @@
 name: "get_scale_size"
 pack: "azure"
 description: "Get scaleset size"
-action_ref: "azure.azure_get_scale_size"
+action_ref: "azure.get_scaleset_size"
 formats:
   - display: "azure scaleset get {{resource_group}} name {{name}}"
     representation:

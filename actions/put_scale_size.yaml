@@ -1,9 +1,9 @@
 ---
-name: "azure_put_scale_size"
+name: "put_scale_size"
 runner_type: "python-script"
 description: "Print message to standard output."
 enabled: true
-entry_point: "azure_put_scale_size.py"
+entry_point: "put_scale_size.py"
 parameters:
     resource_group:
         type: "string"
