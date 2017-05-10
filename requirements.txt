@@ -1,3 +1,4 @@
+azurerm
 azure-mgmt==0.30.0a1
 msrestazure
 -e git+https://github.com/apache/libcloud.git@trunk#egg=libcloud

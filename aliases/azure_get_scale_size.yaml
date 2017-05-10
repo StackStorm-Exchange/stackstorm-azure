@@ -1,0 +1,25 @@
+---
+name: "get_scale_size"
+pack: "azure"
+description: "Get scaleset size"
+action_ref: "azure.azure_get_scale_size"
+formats:
+  - display: "azure scaleset get {{resource_group}} name {{name}}"
+    representation:
+      - "azure scaleset get {{resource_group}} name {{scale_group}}"
+ack:
+  enabled: false
+  append_url: false
+result:
+  extra:
+    slack:
+      capacity: "{{execution.result.result.capacity}}"
+      color: "#00ad52" # aka Slack 'good'
+      footer: "Azure"
+  format: |
+    {% if execution.status == 'succeeded' %}
+    Scaleset of _{{execution.parameters.scale_group}}_ at _{{execution.parameters.resource_group}}_  is {{execution.result.result.capacity}}{~}
+    {{execution.result.result.body}}
+    {% else %}
+    Error: {{execution.result.stdout}}{~}See {{execution.id}} for more details.
+    {% endif %}

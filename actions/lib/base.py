@@ -7,11 +7,62 @@ from libcloud.storage.providers import get_driver as get_storage_driver
 
 from msrestazure.azure_active_directory import ServicePrincipalCredentials
 
+import azurerm
+
 __all__ = [
     'AzureBaseComputeAction',
     'AzureBaseStorageAction',
-    'AzureBaseResourceManagerAction'
+    'AzureBaseResourceManagerAction',
+    'AzureBaseAzureRM'
 ]
+
+
+class AzureBaseAzureRM(Action):
+    def __init__(self, config):
+        super(AzureBaseAzureRM, self).__init__(config=config)
+        resource_manager = config['resource_manager']
+        tenant_id = resource_manager['tenant']
+        app_id = resource_manager['client_id']
+        app_secret = resource_manager['secret']
+        self.subscription_id = config['compute']['subscription_id']
+        self.access_token = azurerm.get_access_token(tenant_id, app_id, app_secret)
+        self.default_resource_group = self._get_default_resource_group_from_cfg(resource_manager)
+
+    @staticmethod
+    def _get_default_resource_group_from_cfg(config):
+        if config.get('default_resource_group'):
+            return config.get('default_resource_group')
+
+    def _get_resource_group(self, resource_group):
+        if resource_group:
+            return resource_group
+        else:
+            if self.default_resource_group:
+                return str(self.default_resource_group)
+            else:
+                raise Exception("Missing resource group")
+
+    def _get_scaleset(self, resource_group=None, scale_group=None):
+        output = azurerm.get_vmss(self.access_token,
+                                  self.subscription_id,
+                                  self._get_resource_group(resource_group),
+                                  scale_group)
+
+        return {'resource_group': self._get_resource_group(resource_group),
+                'scale_group_name': output['name'],
+                'tier': output['sku']['tier'],
+                'capacity': output['sku']['capacity'],
+                'machine_type': output['sku']['name']}
+
+    def _set_scaleset(self, resource_group=None, scale_group=None, count=1):
+        get_current = self._get_scaleset(self._get_resource_group(resource_group), scale_group)
+        return azurerm.scale_vmss(self.access_token,
+                                  self.subscription_id,
+                                  self._get_resource_group(resource_group),
+                                  scale_group,
+                                  get_current['machine_type'],
+                                  get_current['tier'],
+                                  count)
 
 
 class AzureBaseComputeAction(Action):
