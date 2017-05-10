@@ -1,5 +1,5 @@
 ---
-name: "get_scale_size"
+name: "get_scaleset_size"
 runner_type: "python-script"
 description: "Print message to standard output."
 enabled: true
