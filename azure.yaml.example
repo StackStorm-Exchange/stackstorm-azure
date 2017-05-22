@@ -1,10 +1,10 @@
 ---
 compute:
-  subscription_id:
-  cert_file:
+  subscription_id: ""
+  cert_file: ""
 storage:
-  name:
-  access_key:
+  name: ""
+  access_key: ""
 resource_manager:
   client_id: 'ABCDEFGH-1234-ABCD-1234-ABCDEFGHIJKL'
   secret: 'XXXXXXXXXXXXXXXXXXXXXXXX'

@@ -1,0 +1,49 @@
+---
+compute:
+    description: "Compute-specific settings."
+    type: "object"
+    required: false
+    additionalProperties: false
+    properties:
+      subscription_id:
+        description: "Azure subscription ID"
+        type: "string"
+        required: false
+      cert_file:
+        description: "Path to certificate file used for authentication"
+        type: "string"
+        required: false
+storage:
+    description: "Storage-specific settings."
+    type: "object"
+    required: false
+    additionalProperties: false
+    properties:
+      name:
+        description: "Storage account name"
+        type: "string"
+        required: false
+      access_key:
+        description: "Storage account access key"
+        type: "string"
+        required: false
+        secret: true
+resource_manager:
+    description: "Resource Manager-specific settings."
+    type: "object"
+    required: false
+    additionalProperties: false
+    properties:
+      client_id:
+        description: "Resource manager client ID"
+        type: "string"
+        required: false
+      secret:
+        description: "Resource manager token"
+        type: "string"
+        required: false
+        secret: true
+      tenant:
+        description: "Resource manager tenant ID"
+        type: "string"
+        required: false

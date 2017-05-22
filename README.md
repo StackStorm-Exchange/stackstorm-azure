@@ -4,6 +4,9 @@ Pack which contains integrations for different Microsoft Azure services.
 
 ## Configuration
 
+Copy the example configuration in [azure.yaml.example](./azure.yaml.example)
+to `/opt/stackstorm/configs/azure.yaml` and edit as required.
+
 * ``compute.subscription_id`` - Your Azure subscription ID.
 * ``compute.cert_file`` - Path to the certificate file used for authentication.
 
@@ -17,7 +20,14 @@ certificate file and obtaining subscription ID](https://libcloud.readthedocs.org
 For information on how to obtain those credentials, see the following page
 [Connecting to Azure Blobs](https://libcloud.readthedocs.org/en/latest/storage/drivers/azure_blobs.html#connecting-to-azure-blobs).
 
+* ``resource_manager.client_id`` Resource manager client ID
+* ``resource_manager.secret`` Resource manager token
+* ``resource_manager.tenant`` Resource manager tenant identifier
+
 For usage of the Resource Manager actions you will need to create a [Service Principal](https://azure.microsoft.com/en-us/documentation/articles/resource-group-create-service-principal-portal/)
+
+You can also use dynamic values from the datastore. See the
+[docs](https://docs.stackstorm.com/reference/pack_configs.html) for more info.
 
 ## Actions
 
@@ -39,4 +49,12 @@ For usage of the Resource Manager actions you will need to create a [Service Pri
 
 * ``create_resource`` - Create a generic ARM resource
 * ``create_linked_resource_url`` - Create a linked (template and parameter) resource from a URI
-* ``list_resource_groups`` - List the names of the resource groups
+* ``list_resource_groups`` - List the names of the resource groups# Zendesk Integration Pack
+
+
+## Actions
+
+* ``create_ticket`` - Creates a new ticket with the given subject and description.
+* ``search_tickets`` - Searches all tickets for the given phrase.
+* ``update_ticket`` - Updates the ticket with the given ID with a new comment.
+* ``update_ticket_status`` - Updates the status of the ticket with the given ID.
