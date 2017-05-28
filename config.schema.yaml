@@ -47,3 +47,7 @@ resource_manager:
         description: "Resource manager tenant ID"
         type: "string"
         required: false
+      default_resource_group:
+        description: "Default Resource Group"
+        type: "string"
+        required: false
