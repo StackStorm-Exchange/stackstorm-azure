@@ -1,4 +1,4 @@
-from st2actions.runners.pythonrunner import Action
+# from st2actions.runners.pythonrunner import Action
 
 from libcloud.compute.providers import Provider as ComputeProvider
 from libcloud.compute.providers import get_driver as get_compute_driver
@@ -61,6 +61,14 @@ class AzureBaseAzureRM(Action):
                                   get_current['machine_type'],
                                   get_current['tier'],
                                   count)
+
+    def _get_public_ips(self, resource_group=None):
+        result = azurerm.list_public_ips(self.access_token,
+                                         self.subscription_id,
+                                         resource_group=resource_group)
+
+        if 'error' not in result and 'value' in result:
+            return [str(i['properties']['ipAddress']) for i in result['value']]
 
 
 class AzureBaseComputeAction(Action):
