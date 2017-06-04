@@ -1,4 +1,9 @@
 # Change Log
+# TBD
+- Adding azurerm package
+- Adding actions
+  - Get/put scaleset size 
+  - Get public address from resouce group
 
 # 0.2.0
 

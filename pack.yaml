@@ -10,6 +10,7 @@ keywords:
   - servers
   - virtual machines
   - azure virtual machines
+  - azurerm 
 version : 0.2.0
 author : StackStorm, Inc.
 email : info@stackstorm.com
