@@ -1,0 +1,11 @@
+---
+name: list_public_ips
+runner_type: run-python
+description: List public IPs.
+enabled: true
+entry_point: list_public_ips.py
+parameters:
+  resource_group:
+    type: "string"
+    description: "resource_group"
+    required: true

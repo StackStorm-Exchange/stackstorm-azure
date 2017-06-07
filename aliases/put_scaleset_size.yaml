@@ -1,0 +1,24 @@
+---
+name: "put_scale_size"
+pack: "azure"
+description: "Put scaleset size"
+action_ref: "azure.put_scaleset_size"
+formats:
+  - display: "azure scaleset put {{resource_group}} name {{scale_group}} count {{count}}"
+    representation:
+      - "azure scaleset put {{resource_group}} name {{scale_group}} count {{count}}"
+ack:
+  enabled: false
+  append_url: false
+result:
+  extra:
+    slack:
+      color: "#00ad52" # aka Slack 'good'
+      footer: "Azure"
+  format: |
+    {% if execution.status == 'succeeded' %}
+    Scaleset  _{{execution.parameters.scale_group}}_ at _{{execution.parameters.resource_group}}_ changing to {{execution.parameters.count}}{~}
+    {{execution.result.result.body}}
+    {% else %}
+    Error: {{execution.result.stdout}}{~}See {{execution.id}} for more details.
+    {% endif %}
