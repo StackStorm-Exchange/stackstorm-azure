@@ -51,8 +51,6 @@ You can also use dynamic values from the datastore. See the
 * ``create_resource`` - Create a generic ARM resource
 * ``create_linked_resource_url`` - Create a linked (template and parameter) resource from a URI
 * ``list_resource_groups`` - List the names of the resource groups
-* ``list_resource_groups`` - List the names of the resource groups
-
 
 ## Actions
 
