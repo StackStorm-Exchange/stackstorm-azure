@@ -23,6 +23,7 @@ For information on how to obtain those credentials, see the following page
 * ``resource_manager.client_id`` Resource manager client ID
 * ``resource_manager.secret`` Resource manager token
 * ``resource_manager.tenant`` Resource manager tenant identifier
+* ``default_resource_group`` - Default resource group
 
 For usage of the Resource Manager actions you will need to create a [Service Principal](https://azure.microsoft.com/en-us/documentation/articles/resource-group-create-service-principal-portal/)
 
@@ -50,8 +51,7 @@ You can also use dynamic values from the datastore. See the
 * ``create_resource`` - Create a generic ARM resource
 * ``create_linked_resource_url`` - Create a linked (template and parameter) resource from a URI
 * ``list_resource_groups`` - List the names of the resource groups
-* ``default_resource_group`` - Default resource group
-* ``list_resource_groups`` - List the names of the resource groups# Zendesk Integration Pack
+* ``list_resource_groups`` - List the names of the resource groups
 
 
 ## Actions
