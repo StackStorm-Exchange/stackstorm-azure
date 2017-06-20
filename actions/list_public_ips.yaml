@@ -1,6 +1,6 @@
 ---
 name: list_public_ips
-runner_type: run-python
+runner_type: python-script
 description: List public IPs.
 enabled: true
 entry_point: list_public_ips.py

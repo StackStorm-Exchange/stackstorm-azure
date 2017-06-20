@@ -1,6 +1,6 @@
 ---
 name: upload_file
-runner_type: run-python
+runner_type: python-script
 description: Upload a file to the provided container.
 enabled: true
 entry_point: upload_file.py
