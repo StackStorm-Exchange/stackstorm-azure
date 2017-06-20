@@ -1,6 +1,6 @@
 ---
 name: list_resource_groups
-runner_type: run-python
+runner_type: python-script
 description: List ARM resource group names
 enabled: true
 entry_point: list_resource_groups.py

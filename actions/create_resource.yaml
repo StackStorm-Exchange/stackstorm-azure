@@ -1,6 +1,6 @@
 ---
 name: create_resource
-runner_type: run-python
+runner_type: python-script
 description: Create a new ARM Generic Resource.
 enabled: true
 entry_point: create_resource.py

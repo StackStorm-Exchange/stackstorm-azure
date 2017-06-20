@@ -1,6 +1,6 @@
 ---
 name: create_linked_resource_url
-runner_type: run-python
+runner_type: python-script
 description: Create a new ARM Linked Resource from a URI.
 enabled: true
 entry_point: create_linked_resource_url.py
