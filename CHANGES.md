@@ -1,6 +1,11 @@
 # Change Log
 
-# 0.3.0
+## 0.3.1
+
+- Changed st2actions import path
+- Pinned azurerm version to avoid breaking changes in v0.8.28 and later
+
+## 0.3.0
 
 - Updated action `runner_type` from `run-python` to `python-script`
 
