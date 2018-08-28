@@ -1,0 +1,32 @@
+---
+name: create_user
+runner_type: python-script
+description: Create an Azure AD user.
+enabled: true
+entry_point: create_user.py
+parameters:
+  user_principal_name:
+    type: string
+    description: User Principal Name.
+    required: true
+  account_enabled:
+    type: boolean
+    description: Enable the account.
+    default: true
+  display_name:
+    type: string
+    description: Display name for user.
+    required: true
+  mail_nickname:
+    type: string
+    description: Mailing nickname.
+    required: true
+  password:
+    type: string
+    secret: true
+    description: Password for user.
+    required: true
+  force_password_change:
+    type: boolean
+    description: Force user to change password on next login.
+    default: false
