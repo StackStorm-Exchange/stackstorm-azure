@@ -1,0 +1,11 @@
+---
+name: delete_user
+runner_type: python-script
+description: Delete an Azure AD user.
+enabled: true
+entry_point: delete_user.py
+parameters:
+  user_object_id:
+    type: string
+    description: User Object ID.
+    required: true

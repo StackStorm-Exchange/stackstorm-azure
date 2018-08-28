@@ -18,4 +18,4 @@ class AzureCreateVMAction(AzureBaseADAction):
                 )
             )
         )
-        return { "user": user.__dict__ }
+        return {"user": user.__dict__}
