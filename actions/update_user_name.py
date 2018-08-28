@@ -1,5 +1,3 @@
-from azure.graphrbac.models import UserCreateParameters, PasswordProfile
-
 from lib.base import AzureBaseADAction
 
 
