@@ -124,7 +124,7 @@ class AzureBaseADAction(Action):
             secret=resource_config['secret'],
             tenant=resource_config['tenant'],
             resource='https://graph.windows.net'
-         )
+        )
 
         self.graphrbac_client = GraphRbacManagementClient(
             self.credentials,
@@ -141,7 +141,7 @@ class AzureBaseADUserPassAction(Action):
             user_config['username'],
             user_config['password'],
             resource='https://graph.windows.net'
-         )
+        )
 
         self.graphrbac_client = GraphRbacManagementClient(
             self.credentials,
