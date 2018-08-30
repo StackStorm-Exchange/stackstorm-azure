@@ -27,11 +27,11 @@ For information on how to obtain those credentials, see the following page
 
 For usage of the Resource Manager actions you will need to create a [Service Principal](https://azure.microsoft.com/en-us/documentation/articles/resource-group-create-service-principal-portal/)
 
+* ``username`` Username of administrator for modifying Azure AD users
+* ``password`` Password of administrator for modifying Azure AD users
+
 You can also use dynamic values from the datastore. See the
 [docs](https://docs.stackstorm.com/reference/pack_configs.html) for more info.
-
-* ``username`` Username of administrator for modify users
-* ``password`` Password of administrator for modifying users
 
 **Note** : When modifying the configuration in `/opt/stackstorm/configs/` please
            remember to tell StackStorm to load these new values by running
