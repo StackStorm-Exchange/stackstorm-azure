@@ -1,0 +1,15 @@
+---
+name: user_enable
+runner_type: python-script
+description: Enable or disable Azure AD user.
+enabled: true
+entry_point: user_enable.py
+parameters:
+  user_object_id:
+    type: string
+    description: User Object ID.
+    required: true
+  enable:
+    type: boolean
+    description: Enable or disable user.
+    default: true

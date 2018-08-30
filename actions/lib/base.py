@@ -5,7 +5,8 @@ from libcloud.compute.providers import get_driver as get_compute_driver
 from libcloud.storage.providers import Provider as StorageProvider
 from libcloud.storage.providers import get_driver as get_storage_driver
 
-from msrestazure.azure_active_directory import ServicePrincipalCredentials
+from msrestazure.azure_active_directory import ServicePrincipalCredentials, UserPassCredentials
+from azure.graphrbac import GraphRbacManagementClient
 
 import azurerm
 
@@ -111,4 +112,38 @@ class AzureBaseResourceManagerAction(Action):
             client_id=resource_config['client_id'],
             secret=resource_config['secret'],
             tenant=resource_config['tenant']
+        )
+
+
+class AzureBaseADAction(Action):
+    def __init__(self, config):
+        super(AzureBaseADAction, self).__init__(config=config)
+        resource_config = self.config['resource_manager']
+        self.credentials = ServicePrincipalCredentials(
+            client_id=resource_config['client_id'],
+            secret=resource_config['secret'],
+            tenant=resource_config['tenant'],
+            resource='https://graph.windows.net'
+        )
+
+        self.graphrbac_client = GraphRbacManagementClient(
+            self.credentials,
+            resource_config['tenant']
+        )
+
+
+class AzureBaseADUserPassAction(Action):
+    def __init__(self, config):
+        super(AzureBaseADUserPassAction, self).__init__(config=config)
+        user_config = self.config['user']
+        resource_config = self.config['resource_manager']
+        self.credentials = UserPassCredentials(
+            user_config['username'],
+            user_config['password'],
+            resource='https://graph.windows.net'
+        )
+
+        self.graphrbac_client = GraphRbacManagementClient(
+            self.credentials,
+            resource_config['tenant']
         )

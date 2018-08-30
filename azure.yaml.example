@@ -10,3 +10,6 @@ resource_manager:
   secret: 'XXXXXXXXXXXXXXXXXXXXXXXX'
   tenant: 'ABCDEFGH-1234-ABCD-1234-ABCDEFGHIJKL'
   default_resource_group: 'stage'
+user:
+  username: 'user@domain.tld'
+  password: 'userPassword'
