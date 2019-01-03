@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.4.1
+
+- Version bump to fix tagging issue, no code changes
+
 ## 0.4.0
 
 - Added new actions for working with Azure AD

@@ -1,7 +1,7 @@
 ---
 ref: azure
 name : azure
-description : st2 content pack containing Microsoft Azure integrations.
+description : Microsoft Azure integrations.
 keywords:
   - microsoft
   - azure
@@ -11,6 +11,6 @@ keywords:
   - virtual machines
   - azure virtual machines
   - azurerm 
-version: 0.4.0
+version: 0.4.1
 author : StackStorm, Inc.
 email : info@stackstorm.com
