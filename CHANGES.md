@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.4.2
+
+- Pin libcloud to <3.0.0 to maintain Python 2 support
+
 ## 0.4.1
 
 - Version bump to fix tagging issue, no code changes
