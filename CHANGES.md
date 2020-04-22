@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.4.3
+
+- Pin azure to <5.0 so we don't have to refactor to use the azure-mgmt-compute,
+  azure-mgmt-storage, azure-mgmt-resource, azure-keyvault-secrets, and
+  azure-storage-blob packages separately - see
+  https://github.com/Azure/azure-sdk-for-python/issues/10646 for more
+
 ## 0.4.2
 
 - Pin libcloud to <3.0.0 to maintain Python 2 support
