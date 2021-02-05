@@ -11,9 +11,8 @@ keywords:
   - virtual machines
   - azure virtual machines
   - azurerm 
-version: 0.4.3
+version: 1.0.0
 author : StackStorm, Inc.
 email : info@stackstorm.com
 python_versions:
-  - "2"
   - "3"

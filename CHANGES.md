@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.0
+
+* Drop Python 2.7 support
+
 ## 0.4.3
 
 - Pin azure to <5.0 so we don't have to refactor to use the azure-mgmt-compute,
