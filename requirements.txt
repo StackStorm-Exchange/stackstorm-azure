@@ -1,6 +1,6 @@
 azurerm==0.8.27
 # azure-mgmt bundle deprecated
-azure-mgmt-resource
+azure-mgmt-resource>=3,<15
 msrestazure
 # azure bundle deprecated
 azure-graphrbac
