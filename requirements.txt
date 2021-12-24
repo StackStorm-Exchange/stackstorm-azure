@@ -1,5 +1,10 @@
 azurerm==0.8.27
-azure-mgmt==0.30.0a1
 msrestazure
-azure<5.0
-apache-libcloud<3.0.0
+
+# azure and azure-mgmt bundles deprecated
+# so we list just the packages we need
+azure-mgmt-resource
+azure-graphrbac
+
+# pip cannot proces earlier libcloud
+apache-libcloud>=1.0.0,<3.0.0

@@ -1,6 +1,4 @@
-from azure.mgmt.resource.resources import (
-    ResourceManagementClient,
-    ResourceManagementClientConfiguration)
+from azure.mgmt.resource.resources import ResourceManagementClient
 from azure.mgmt.resource.resources.models import GenericResource
 
 from lib.base import AzureBaseResourceManagerAction
@@ -13,9 +11,8 @@ class CreateResourceAction(AzureBaseResourceManagerAction):
         credentials = self.credentials
 
         resource_client = ResourceManagementClient(
-            ResourceManagementClientConfiguration(
-                credentials,
-                subscription_id))
+            credentials, subscription_id
+        )
 
         result = resource_client.resources.create_or_update(
             group_name,

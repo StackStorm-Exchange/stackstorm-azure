@@ -1,6 +1,4 @@
-from azure.mgmt.resource.resources import (
-    ResourceManagementClient,
-    ResourceManagementClientConfiguration)
+from azure.mgmt.resource.resources import ResourceManagementClient
 from azure.mgmt.resource.resources.models import Deployment
 from azure.mgmt.resource.resources.models import DeploymentProperties
 from azure.mgmt.resource.resources.models import DeploymentMode
@@ -15,9 +13,8 @@ class AzureCreateLinkedResourceUriAction(AzureBaseResourceManagerAction):
             template_uri, parameters_uri):
         credentials = self.credentials
         resource_client = ResourceManagementClient(
-            ResourceManagementClientConfiguration(
-                credentials,
-                subscription_id))
+            credentials, subscription_id
+        )
         template = TemplateLink(
             uri=template_uri,
         )
