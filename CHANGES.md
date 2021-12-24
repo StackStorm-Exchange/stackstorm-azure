@@ -1,11 +1,5 @@
 # Change Log
 
-## 1.1.0
-
-* Updated requirements to use individual azure libs instead of the now-deprecated
-  azure-mgmt and azure bundles. With newer versions of pip (which st2 now uses)
-  the previous requirements were not installable.
-
 ## 1.0.0
 
 * Drop Python 2.7 support

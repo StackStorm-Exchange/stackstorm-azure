@@ -1,7 +1,5 @@
 azurerm==0.8.27
-# azure-mgmt bundle deprecated
-azure-mgmt-resource>=3,<15
+azure-mgmt==0.30.0a1
 msrestazure
-# azure bundle deprecated
-azure-graphrbac
-apache-libcloud>=1.0.0,<3.0.0
+azure<5.0
+apache-libcloud<3.0.0
