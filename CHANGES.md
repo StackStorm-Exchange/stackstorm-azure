@@ -1,6 +1,6 @@
 # Change Log
 
-## 1.0.0
+## 1.1.0
 
 * Close: https://security.snyk.io/vuln/SNYK-PYTHON-AZURESTORAGEBLOB-2949173
 * Close: https://security.snyk.io/vuln/SNYK-PYTHON-AZURESTORAGEQUEUE-2949174
