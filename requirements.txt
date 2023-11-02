@@ -3,3 +3,5 @@ azure-mgmt==0.30.0a1
 msrestazure
 azure<5.0
 apache-libcloud<3.0.0
+azure-storage-blob>=12.13.0
+azure-storage-queue>=12.4.0

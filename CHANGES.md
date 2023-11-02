@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.1.0
+
+* Close: https://security.snyk.io/vuln/SNYK-PYTHON-AZURESTORAGEBLOB-2949173
+* Close: https://security.snyk.io/vuln/SNYK-PYTHON-AZURESTORAGEQUEUE-2949174
+
 ## 1.0.0
 
 * Drop Python 2.7 support
